@@ -235,28 +235,3 @@ p {
     margin: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .kanban-column {
-        width: 30%; /* Adjusts to fit more columns in medium screens */
-    }
-}
-
-@media (max-width: 900px) {
-    .kanban-column {
-        width: 45%; /* Adjusts for smaller screens */
-    }
-}
-
-@media (max-width: 600px) {
-    .kanban-column {
-        width: 100%; /* Stacks columns on very small screens */
-    }
-}
-
-/* Adjusting the padding of the kanban board for small screens */
-@media (max-width: 600px) {
-    .kanban-board {
-        padding: 5px; /* Less padding for small screens */
-    }
-}
