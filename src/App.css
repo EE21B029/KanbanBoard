@@ -7,22 +7,28 @@
 /* Kanban Board Styling */
 .kanban-board {
     display: flex;
-    justify-content: space-evenly; /* Adjusted to evenly space columns */
+    justify-content: space-evenly; /* Adjust spacing */
     width: 100%;
-    padding: 0 ;
-    background-color:rgb(244, 244, 244);
+    padding: 0;
+    background-color: rgb(244, 244, 244);
+    flex-wrap: wrap; /* Allows wrapping on very small screens */
+    box-sizing: border-box;
 }
 
 /* Column Styling */
 .kanban-column {
-    width: 22%; /* Ensure all columns have the same width */
+    flex: 1 1 calc(20% - 20px); /* Each column takes ~20% of space with margin taken into account */
     padding: 10px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    align-items: stretch; /* Ensures that child items stretch */
-    
+    align-items: stretch;
+    margin: 10px;
+    box-sizing: border-box;
+    min-width: 200px; /* Ensure columns don't shrink too much */
+    max-width: 300px; /* Limit the max width of each column */
 }
+
 
 /* Column Header */
 .column-header {
@@ -42,10 +48,7 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
-    
 }
-
-
 
 /* Ticket Card Styling */
 .ticket-card {
@@ -57,9 +60,9 @@
     font-size: 0.8em;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Makes sure content is evenly distributed */
-    height: 150px; /* Set fixed height for uniformity */
-    box-sizing: border-box; /* Ensure padding is included in height */
+    justify-content: space-between;
+    height: 150px;
+    box-sizing: border-box;
 }
 
 /* Header section with ID, Avatar, and Dots */
@@ -80,38 +83,34 @@
     width: 15px;
     height: 15px;
     cursor: pointer;
-    
-    margin-left: 10px; /* Space between icon and content */
+    margin-left: 10px;
 }
-
-
 
 /* Ticket Title */
 .ticket-card h3 {
     margin-bottom: 10px;
     font-size: 1.1em;
     color: #333;
-    flex-grow: 1; /* Ensures the title takes up available space */
+    flex-grow: 1;
 }
 
 /* Ticket Footer */
 .ticket-footer {
     display: flex;
     align-items: center;
-    justify-content:flex-start; /* Aligns content evenly */
-
+    justify-content: flex-start;
 }
 
 /* Feature Request Section */
 .feature-request {
-    border: 1px soild #ccc;
+    border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
     background-color: #f9f9f9;
-    margin-top: 5px; /* Top margin for spacing */
+    margin-top: 5px;
     display: flex;
     align-items: center;
-    flex-grow: 0; /* Ensures it does not grow */
+    flex-grow: 0;
     margin-right: 20px;
 }
 
@@ -120,7 +119,7 @@
     height: 10px;
     background-color: #939292;
     border-radius: 50%;
-    margin-right: 5px; /* Space between symbol and text */
+    margin-right: 5px;
 }
 
 .ticket-options-icon {
@@ -165,8 +164,8 @@
     cursor: pointer;
     border-radius: 5px;
     font-size: 0.9em;
-    border: 0.5px solid rgba(102, 102, 102, 0.3); /* Lighter, subtle border */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Softer, shadow-like effect */
+    border: 0.5px solid rgba(102, 102, 102, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -233,4 +232,33 @@ h2 {
 
 p {
     margin: 0;
+}
+
+/* Responsive Styling */
+
+/* For laptop screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .kanban-column {
+        flex: 1 1 calc(33% - 20px); /* Adjust column width to 33% for 3 columns per row */
+    }
+}
+
+/* For tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .kanban-board {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center;
+    }
+
+    .kanban-column {
+        width: 80%; /* Increase column width for smaller screens */
+    }
+}
+
+/* For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .kanban-column {
+        width: 95%;
+        padding: 5px;
+    }
 }
