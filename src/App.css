@@ -235,51 +235,28 @@ p {
     margin: 0;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1200px) {
     .kanban-column {
-        width: 30%; /* Adjust column width for smaller screens */
+        width: 30%; /* Adjusts to fit more columns in medium screens */
     }
 }
 
 @media (max-width: 900px) {
     .kanban-column {
-        width: 45%; /* Adjust column width further for tablets */
-    }
-
-    .ticket-card {
-        height: auto; /* Allow card height to be dynamic */
-    }
-
-    .column-header h2 {
-        font-size: 0.9em; /* Slightly reduce header font size */
-    }
-
-    .add-icon {
-        width: 18px; /* Reduce icon size */
-        height: 18px;
+        width: 45%; /* Adjusts for smaller screens */
     }
 }
 
 @media (max-width: 600px) {
     .kanban-column {
-        width: 100%; /* Stack columns on mobile */
-        padding: 5px; /* Reduce padding */
+        width: 100%; /* Stacks columns on very small screens */
     }
+}
 
-    .dropdown-container {
-        padding: 5px; /* Reduce dropdown padding */
-    }
-
-    .display-button {
-        font-size: 0.8em; /* Reduce button font size */
-    }
-
-    .ticket-card {
-        padding: 10px; /* Reduce padding on cards */
-        margin: 5px 0; /* Reduce margin between cards */
-    }
-
-    .ticket-card h3 {
-        font-size: 1em; /* Adjust title font size */
+/* Adjusting the padding of the kanban board for small screens */
+@media (max-width: 600px) {
+    .kanban-board {
+        padding: 5px; /* Less padding for small screens */
     }
 }
