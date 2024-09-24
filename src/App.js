@@ -44,8 +44,8 @@ const getPriorityIcon = (priority) => {
 // Ticket Card Component
 
 const TicketCard = ({ ticket }) => {
-    const statusIcon = getStatusIcon(ticket.status); 
-    const priorityIcon = getPriorityIcon(ticket.priority);
+    //const statusIcon = getStatusIcon(ticket.status); 
+    //const priorityIcon = getPriorityIcon(ticket.priority);
 
     return (
         <div className="ticket-card">
